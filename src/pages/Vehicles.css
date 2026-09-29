@@ -1,0 +1,2006 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap");
+
+:root {
+  --noir: #17191c;
+  --noir-2: #ffffff;
+  --white: #ffffff;
+  --light: #f7f7f9;
+  --light-2: #f1f2f5;
+  --muted: #737780;
+
+  --violet: #7657ff;
+  --rose: #ff4f8b;
+  --mint: #b7f34a;
+
+  --border: #e5e6eb;
+  --dark-border: rgba(23, 25, 28, 0.1);
+
+  --concrete: #e7e5e0;
+  --gallery-white: #f8f7f3;
+
+  --gradient-neon:
+    linear-gradient(100deg, #7657ff, #ff4f8b 55%, #b7f34a);
+
+  --gradient-purple:
+    linear-gradient(135deg, #7657ff, #ff4f8b);
+
+  --shadow-sm:
+    0 12px 35px rgba(23, 25, 28, 0.06);
+
+  --shadow-md:
+    0 20px 55px rgba(23, 25, 28, 0.1);
+
+  --shadow-lg:
+    0 30px 80px rgba(23, 25, 28, 0.16);
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.berlin-vehicles-page {
+  overflow: hidden;
+  background: var(--white);
+  color: var(--noir);
+  font-family: "DM Sans", sans-serif;
+}
+
+.berlin-vehicles-page *,
+.berlin-vehicles-page *::before,
+.berlin-vehicles-page *::after {
+  box-sizing: border-box;
+}
+
+.berlin-vehicles-page img {
+  max-width: 100%;
+}
+
+.berlin-vehicles-page a {
+  text-decoration: none;
+}
+
+.berlin-vehicles-page button {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   HERO — BLACK
+========================================================= */
+
+.vehicles-hero {
+  min-height: 850px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background: var(--noir);
+}
+
+.vehicles-hero-slides,
+.vehicles-hero-slide,
+.vehicles-hero-overlay,
+.vehicles-hero-grid {
+  position: absolute;
+  inset: 0;
+}
+
+.vehicles-hero-slide {
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  transition:
+    opacity 1s ease,
+    transform 5s ease;
+}
+
+.vehicles-hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vehicles-hero-overlay {
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 25, 28, 0.97) 0%,
+      rgba(23, 25, 28, 0.88) 34%,
+      rgba(23, 25, 28, 0.58) 64%,
+      rgba(23, 25, 28, 0.22) 100%
+    ),
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(118, 87, 255, 0.18),
+      transparent 32%
+    );
+}
+
+.vehicles-hero-grid {
+  z-index: 2;
+  opacity: 0.09;
+
+  background-image:
+    linear-gradient(
+      rgba(248, 247, 243, 0.3) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(248, 247, 243, 0.3) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+}
+
+.vehicles-hero-container {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  min-height: 850px;
+
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.vehicles-hero-content {
+  max-width: 720px;
+}
+
+.vehicles-eyebrow,
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--mint);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.vehicles-eyebrow span {
+  width: 28px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--rose),
+      var(--mint)
+    );
+}
+
+.vehicles-hero h1 {
+  margin: 25px 0;
+
+  color: var(--gallery-white);
+
+  font-family: "Playfair Display", serif;
+  font-size: clamp(72px, 9vw, 145px);
+  font-weight: 500;
+  line-height: 0.82;
+  letter-spacing: -6px;
+}
+
+.vehicles-hero h1 em {
+  color: var(--rose);
+  font-weight: 500;
+}
+
+.vehicles-hero p {
+  max-width: 530px;
+  margin: 35px 0;
+
+  color: rgba(248, 247, 243, 0.7);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.vehicles-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.luxury-btn {
+  min-height: 56px;
+
+  padding: 0 25px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+
+  transition: 0.35s ease;
+}
+
+.primary-btn {
+  color: #fff;
+
+  background:
+    linear-gradient(
+      100deg,
+      var(--violet),
+      var(--rose) 55%,
+      var(--mint)
+    );
+
+  box-shadow:
+    0 15px 40px rgba(118, 87, 255, 0.25);
+}
+
+.primary-btn:hover {
+  color: #fff;
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 55px rgba(118, 87, 255, 0.35);
+}
+
+.outline-btn {
+  color: var(--gallery-white);
+
+  border: 1px solid rgba(248, 247, 243, 0.28);
+
+  background: rgba(248, 247, 243, 0.06);
+
+  backdrop-filter: blur(10px);
+}
+
+.outline-btn:hover {
+  color: var(--noir);
+  background: var(--mint);
+  border-color: var(--mint);
+
+  transform: translateY(-4px);
+}
+
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-mini-stats {
+  display: flex;
+  gap: 45px;
+  margin-top: 70px;
+}
+
+.hero-mini-stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.hero-mini-stats strong {
+  color: var(--gallery-white);
+
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.hero-mini-stats span {
+  color: rgba(248, 247, 243, 0.45);
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   HERO SIDE
+========================================================= */
+
+.vehicles-hero-side {
+  align-self: flex-end;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 12px;
+
+  padding-bottom: 70px;
+
+  text-align: right;
+}
+
+.vehicles-hero-side span {
+  color: var(--mint);
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.vehicles-hero-side strong {
+  color: var(--gallery-white);
+
+  font-family: "Playfair Display", serif;
+  font-size: 90px;
+  font-weight: 500;
+  line-height: 0.8;
+}
+
+.vehicles-hero-side small {
+  color: rgba(248, 247, 243, 0.45);
+
+  font-size: 8px;
+  line-height: 1.7;
+  letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   MARQUEE — WHITE
+========================================================= */
+
+.vehicles-marquee {
+  overflow: hidden;
+
+  padding: 20px 0;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  background: var(--white);
+}
+
+.marquee-track {
+  width: max-content;
+
+  display: flex;
+
+  animation: vehicleMarquee 28s linear infinite;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+
+  gap: 28px;
+
+  padding-right: 28px;
+
+  white-space: nowrap;
+}
+
+.marquee-content span {
+  color: var(--noir);
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.marquee-content i {
+  color: var(--violet);
+
+  font-size: 9px;
+  font-style: normal;
+}
+
+@keyframes vehicleMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* =========================================================
+   INTRO — GREY
+========================================================= */
+
+.vehicle-luxury-intro {
+  padding: 130px 0;
+
+  background:
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(118, 87, 255, 0.11),
+      transparent 30%
+    ),
+    var(--concrete);
+}
+
+.luxury-intro-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+.luxury-intro-copy h2,
+.vehicle-section-head h2 {
+  margin: 20px 0;
+
+  color: var(--noir);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(48px, 5vw, 78px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -2px;
+}
+
+.luxury-intro-copy h2 strong,
+.vehicle-section-head h2 strong {
+  color: var(--rose);
+
+  font-weight: 500;
+
+  font-style: italic;
+}
+
+.luxury-intro-copy > p {
+  max-width: 570px;
+
+  color: #555a62;
+
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.luxury-text-link {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 25px;
+
+  color: var(--violet);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+
+  text-decoration: none;
+}
+
+.luxury-text-link:hover {
+  color: var(--rose);
+}
+
+.luxury-text-link svg {
+  transition: 0.3s ease;
+}
+
+.luxury-text-link:hover svg {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   INTRO CARDS
+========================================================= */
+
+.luxury-intro-cards {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+.intro-feature-card {
+  position: relative;
+
+  min-height: 230px;
+
+  padding: 30px;
+
+  border: 1px solid rgba(23, 25, 28, 0.1);
+
+  border-radius: 28px;
+
+  background: var(--white);
+
+  overflow: hidden;
+
+  transition: 0.35s ease;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.intro-feature-card:nth-child(2) {
+  background: var(--noir);
+}
+
+.intro-feature-card:nth-child(2) h3,
+.intro-feature-card:nth-child(2) p {
+  color: var(--gallery-white);
+}
+
+.intro-feature-card:nth-child(2) svg {
+  color: var(--mint);
+}
+
+.intro-feature-card:nth-child(3) {
+  background: var(--gradient-purple);
+}
+
+.intro-feature-card:nth-child(3) h3,
+.intro-feature-card:nth-child(3) p,
+.intro-feature-card:nth-child(3) svg {
+  color: #fff;
+}
+
+.intro-feature-card:last-child {
+  grid-column: span 2;
+
+  min-height: 190px;
+
+  background: var(--mint);
+}
+
+.intro-feature-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.intro-feature-card svg {
+  color: var(--violet);
+
+  font-size: 20px;
+}
+
+.intro-feature-card > span {
+  position: absolute;
+
+  top: 28px;
+  right: 28px;
+
+  color: #9b9da2;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.intro-feature-card h3 {
+  margin: 45px 0 10px;
+
+  color: var(--noir);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.intro-feature-card p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SERVICES — BLACK
+========================================================= */
+
+.vehicle-service-section {
+  padding: 120px 0;
+
+  background: var(--noir);
+}
+
+.vehicle-service-section .section-eyebrow {
+  color: var(--mint);
+}
+
+.vehicle-section-head {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin-bottom: 60px;
+}
+
+.vehicle-section-head h2 {
+  color: var(--gallery-white);
+}
+
+.vehicle-section-head > p {
+  max-width: 400px;
+
+  margin-bottom: 10px;
+
+  color: rgba(248, 247, 243, 0.6);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.vehicle-service-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  border-top: 1px solid rgba(248, 247, 243, 0.13);
+
+  border-bottom: 1px solid rgba(248, 247, 243, 0.13);
+}
+
+.vehicle-service-item {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 35px 28px;
+
+  border-right: 1px solid rgba(248, 247, 243, 0.13);
+
+  background: transparent;
+
+  transition: 0.35s ease;
+}
+
+.vehicle-service-item:last-child {
+  border-right: 0;
+}
+
+.vehicle-service-item:hover {
+  background: #202328;
+}
+
+.service-number {
+  color: var(--rose);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+
+  margin: 35px 0 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--violet),
+      var(--rose)
+    );
+}
+
+.vehicle-service-item h3 {
+  margin-bottom: 12px;
+
+  color: var(--gallery-white);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.vehicle-service-item p {
+  margin: 0;
+
+  color: rgba(248, 247, 243, 0.6);
+
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+.service-line {
+  position: absolute;
+
+  left: 28px;
+  bottom: 25px;
+
+  width: 45px;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--rose),
+      var(--mint)
+    );
+}
+
+
+/* =========================================================
+   FLEET — WHITE
+   TABS SECTION
+========================================================= */
+
+.vehicle-fleet-section {
+  padding: 130px 0;
+
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(255, 79, 139, 0.07),
+      transparent 28%
+    ),
+    var(--white);
+}
+
+.vehicle-fleet-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 50px;
+
+  margin-bottom: 45px;
+}
+
+.vehicle-fleet-heading p {
+  max-width: 430px;
+
+  margin: 0 0 12px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.vehicle-tabs {
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 45px;
+
+  flex-wrap: wrap;
+}
+
+.vehicle-tabs button {
+  padding: 13px 24px;
+
+  border: 1px solid var(--border);
+
+  border-radius: 999px;
+
+  background: #fff;
+
+  color: #777b83;
+
+  font-family: "DM Sans", sans-serif;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.vehicle-tabs button:hover,
+.vehicle-tabs button.active {
+  color: #fff;
+
+  border-color: transparent;
+
+  background:
+    linear-gradient(
+      100deg,
+      var(--violet),
+      var(--rose),
+      var(--mint)
+    );
+
+  box-shadow:
+    0 8px 25px rgba(118, 87, 255, 0.15);
+}
+
+
+/* =========================================================
+   VEHICLE GRID
+========================================================= */
+
+.vehicle-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 28px;
+}
+
+.luxury-vehicle-card {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+
+  border-radius: 32px;
+
+  background: #fff;
+
+  box-shadow:
+    0 15px 50px rgba(23, 25, 28, 0.06);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.luxury-vehicle-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(118, 87, 255, 0.3);
+
+  box-shadow:
+    0 30px 80px rgba(23, 25, 28, 0.12);
+}
+
+.luxury-card-image {
+  position: relative;
+
+  height: 390px;
+
+  overflow: hidden;
+}
+
+.luxury-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform 0.7s ease;
+}
+
+.luxury-vehicle-card:hover .luxury-card-image img {
+  transform: scale(1.06);
+}
+
+.luxury-card-gradient {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(15, 16, 18, 0.8) 0%,
+      rgba(15, 16, 18, 0.25) 40%,
+      transparent 75%
+    );
+}
+
+.vehicle-category,
+.vehicle-index {
+  position: absolute;
+
+  top: 22px;
+
+  padding: 9px 13px;
+
+  border-radius: 999px;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.vehicle-category {
+  left: 22px;
+
+  color: var(--noir);
+
+  background: var(--mint);
+}
+
+.vehicle-index {
+  right: 22px;
+
+  color: #fff;
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background: rgba(23, 25, 28, 0.35);
+
+  backdrop-filter: blur(8px);
+}
+
+.vehicle-image-name {
+  position: absolute;
+
+  left: 30px;
+  right: 30px;
+  bottom: 27px;
+}
+
+.vehicle-image-name small {
+  color: var(--mint);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.vehicle-image-name h3 {
+  margin: 7px 0 0;
+
+  color: #fff;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 38px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CARD BODY
+========================================================= */
+
+.luxury-card-body {
+  position: relative;
+
+  padding: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff 0%,
+      #fff 65%,
+      rgba(118, 87, 255, 0.045) 82%,
+      rgba(255, 79, 139, 0.06) 94%,
+      rgba(183, 243, 74, 0.08) 100%
+    );
+}
+
+.luxury-card-body::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--rose),
+      var(--mint)
+    );
+}
+
+.vehicle-description {
+  margin: 0 0 24px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.vehicle-specs {
+  display: flex;
+
+  gap: 9px;
+
+  margin-bottom: 22px;
+}
+
+.vehicle-specs span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 13px;
+
+  border-radius: 999px;
+
+  background: var(--light-2);
+
+  color: #555a63;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.vehicle-specs svg,
+.vehicle-features svg {
+  color: var(--violet);
+}
+
+.vehicle-features {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.vehicle-features span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  color: #777b83;
+
+  font-size: 10px;
+}
+
+.vehicle-features svg {
+  font-size: 8px;
+}
+
+.luxury-card-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 25px;
+}
+
+.vehicle-price {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 7px;
+}
+
+.vehicle-price small {
+  align-self: flex-start;
+
+  color: var(--rose);
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.vehicle-price strong {
+  color: var(--noir);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 30px;
+
+  font-weight: 500;
+}
+
+.vehicle-price span {
+  color: var(--muted);
+
+  font-size: 8px;
+}
+
+.round-arrow-btn {
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--violet),
+      var(--rose),
+      var(--mint)
+    );
+
+  text-decoration: none;
+
+  transition: 0.35s ease;
+}
+
+.round-arrow-btn:hover {
+  color: #fff;
+
+  transform:
+    rotate(-45deg)
+    scale(1.08);
+}
+
+
+/* =========================================================
+   CHAUFFEUR — BLACK
+========================================================= */
+
+.chauffeur-luxury-section {
+  position: relative;
+
+  min-height: 760px;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  background: var(--noir);
+}
+
+.chauffeur-luxury-image,
+.chauffeur-luxury-overlay {
+  position: absolute;
+
+  inset: 0;
+}
+
+.chauffeur-luxury-image {
+  background:
+    url("https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
+
+  transform: scale(1.03);
+}
+
+.chauffeur-luxury-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 25, 28, 0.97),
+      rgba(23, 25, 28, 0.8) 45%,
+      rgba(23, 25, 28, 0.28)
+    ),
+    radial-gradient(
+      circle at 80% 45%,
+      rgba(118, 87, 255, 0.2),
+      transparent 30%
+    );
+}
+
+.chauffeur-luxury-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 600px;
+
+  padding: 100px 0;
+}
+
+.chauffeur-luxury-content .section-eyebrow {
+  color: var(--mint);
+}
+
+.chauffeur-luxury-content h2 {
+  margin: 20px 0;
+
+  color: var(--gallery-white);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(60px, 7vw, 105px);
+
+  line-height: 0.84;
+
+  font-weight: 500;
+
+  letter-spacing: -4px;
+}
+
+.chauffeur-luxury-content h2 strong {
+  color: var(--rose);
+
+  font-style: italic;
+
+  font-weight: 500;
+}
+
+.chauffeur-luxury-content > p {
+  max-width: 500px;
+
+  color: rgba(248, 247, 243, 0.68);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.chauffeur-points {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin: 30px 0;
+}
+
+.chauffeur-points span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 11px 14px;
+
+  border:
+    1px solid rgba(248, 247, 243, 0.16);
+
+  border-radius: 999px;
+
+  background:
+    rgba(248, 247, 243, 0.07);
+
+  color: var(--gallery-white);
+
+  font-size: 9px;
+}
+
+.chauffeur-points svg {
+  color: var(--mint);
+}
+
+
+/* =========================================================
+   PROCESS — GREY
+========================================================= */
+
+.vehicle-process-section {
+  padding: 125px 0;
+
+  background: var(--concrete);
+}
+
+.vehicle-process-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.process-card {
+  min-height: 270px;
+
+  padding: 32px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  border: 1px solid rgba(23, 25, 28, 0.1);
+
+  border-radius: 30px;
+
+  background: var(--white);
+
+  box-shadow: var(--shadow-sm);
+
+  transition: 0.35s ease;
+}
+
+.process-card:nth-child(2) {
+  background: var(--noir);
+}
+
+.process-card:nth-child(2) h3,
+.process-card:nth-child(2) p {
+  color: var(--gallery-white);
+}
+
+.process-card:nth-child(2) > span {
+  color: var(--mint);
+}
+
+.process-card:nth-child(3) {
+  background: var(--gradient-purple);
+}
+
+.process-card:nth-child(3) h3,
+.process-card:nth-child(3) p,
+.process-card:nth-child(3) > span {
+  color: #fff;
+}
+
+.process-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow: var(--shadow-lg);
+}
+
+.process-card > span {
+  color: var(--rose);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.process-card h3 {
+  color: var(--noir);
+
+  margin: 0 0 12px;
+
+  font-family: "Playfair Display", serif;
+
+  font-size: 29px;
+
+  font-weight: 500;
+}
+
+.process-card p {
+  max-width: 330px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TESTIMONIAL — WHITE
+========================================================= */
+
+.vehicle-testimonial {
+  padding: 110px 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(118, 87, 255, 0.08),
+      transparent 42%
+    ),
+    var(--white);
+}
+
+.testimonial-box {
+  max-width: 900px;
+
+  margin: auto;
+
+  text-align: center;
+}
+
+.testimonial-stars {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  color: var(--rose);
+}
+
+.testimonial-box blockquote {
+  margin: 35px auto;
+
+  color: var(--noir);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(32px, 4vw, 54px);
+
+  line-height: 1.15;
+
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.testimonial-author strong {
+  color: var(--noir);
+
+  font-size: 10px;
+
+  letter-spacing: 2px;
+}
+
+.testimonial-author span {
+  color: var(--muted);
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   FINAL CTA — BLACK
+========================================================= */
+
+.vehicles-final-cta {
+  position: relative;
+
+  min-height: 650px;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  background: var(--noir);
+}
+
+.vehicles-final-bg,
+.vehicles-final-overlay {
+  position: absolute;
+
+  inset: 0;
+}
+
+.vehicles-final-bg {
+  background:
+    url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
+}
+
+.vehicles-final-overlay {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 25, 28, 0.97),
+      rgba(23, 25, 28, 0.8) 50%,
+      rgba(23, 25, 28, 0.35)
+    ),
+    linear-gradient(
+      135deg,
+      rgba(118, 87, 255, 0.2),
+      transparent 55%
+    );
+}
+
+.vehicles-final-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 650px;
+
+  padding: 100px 0;
+}
+
+.vehicles-final-content .section-eyebrow {
+  color: var(--mint);
+}
+
+.vehicles-final-content h2 {
+  margin: 22px 0;
+
+  color: var(--gallery-white);
+
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(60px, 8vw, 115px);
+
+  line-height: 0.82;
+
+  font-weight: 500;
+
+  letter-spacing: -5px;
+}
+
+.vehicles-final-content h2 strong {
+  color: var(--rose);
+
+  font-style: italic;
+
+  font-weight: 500;
+}
+
+.vehicles-final-content p {
+  max-width: 500px;
+
+  margin-bottom: 30px;
+
+  color: rgba(248, 247, 243, 0.68);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .vehicles-hero-container,
+  .vehicle-luxury-intro .container,
+  .vehicle-service-section .container,
+  .vehicle-fleet-section .container,
+  .chauffeur-luxury-section .container,
+  .vehicle-process-section .container,
+  .vehicle-testimonial .container,
+  .vehicles-final-cta .container {
+    max-width: 1320px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .vehicles-hero,
+  .vehicles-hero-container {
+    min-height: 760px;
+  }
+
+  .vehicles-hero-container {
+    padding-top: 110px;
+  }
+
+  .vehicles-hero h1 {
+    font-size: clamp(65px, 12vw, 105px);
+  }
+
+  .vehicles-hero-side {
+    display: none;
+  }
+
+  .luxury-intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+  .vehicle-section-head,
+  .vehicle-fleet-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .vehicle-service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .vehicle-service-item:nth-child(2) {
+    border-right: 0;
+  }
+
+  .vehicle-service-item:nth-child(-n + 2) {
+    border-bottom:
+      1px solid rgba(248, 247, 243, 0.13);
+  }
+
+  .vehicle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chauffeur-luxury-section {
+    min-height: 700px;
+  }
+
+  .vehicle-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-card {
+    min-height: 220px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .vehicles-hero,
+  .vehicles-hero-container {
+    min-height: 720px;
+  }
+
+  .vehicles-hero-container {
+    padding: 110px 20px 60px;
+  }
+
+  .vehicles-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(23, 25, 28, 0.97),
+        rgba(23, 25, 28, 0.74)
+      );
+  }
+
+  .vehicles-hero h1 {
+    margin: 22px 0;
+
+    font-size: clamp(65px, 18vw, 95px);
+
+    letter-spacing: -4px;
+  }
+
+  .vehicles-hero p {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  .vehicles-hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .luxury-btn {
+    width: 100%;
+  }
+
+  .hero-mini-stats {
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 45px;
+  }
+
+  .hero-mini-stats strong {
+    font-size: 20px;
+  }
+
+  .hero-mini-stats span {
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .vehicle-luxury-intro,
+  .vehicle-service-section,
+  .vehicle-fleet-section,
+  .vehicle-process-section {
+    padding: 80px 0;
+  }
+
+  .luxury-intro-grid {
+    gap: 45px;
+  }
+
+  .luxury-intro-copy h2,
+  .vehicle-section-head h2 {
+    font-size: 50px;
+  }
+
+  .luxury-intro-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .intro-feature-card,
+  .intro-feature-card:last-child {
+    grid-column: auto;
+
+    min-height: 210px;
+  }
+
+  .vehicle-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-service-item,
+  .vehicle-service-item:nth-child(2) {
+    min-height: 260px;
+
+    border-right: 0;
+
+    border-bottom:
+      1px solid rgba(248, 247, 243, 0.13);
+  }
+
+  .vehicle-service-item:last-child {
+    border-bottom: 0;
+  }
+
+  /* FLEET/TABS SAME STRUCTURE */
+
+  .vehicle-fleet-heading {
+    margin-bottom: 30px;
+  }
+
+  .vehicle-tabs {
+    overflow-x: auto;
+
+    flex-wrap: nowrap;
+
+    padding-bottom: 8px;
+
+    scrollbar-width: none;
+  }
+
+  .vehicle-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .vehicle-tabs button {
+    flex-shrink: 0;
+  }
+
+  .luxury-card-image {
+    height: 330px;
+  }
+
+  .vehicle-image-name h3 {
+    font-size: 32px;
+  }
+
+  .luxury-card-body {
+    padding: 23px;
+  }
+
+  .vehicle-features {
+    grid-template-columns: 1fr;
+  }
+
+  .chauffeur-luxury-section {
+    min-height: 650px;
+  }
+
+  .chauffeur-luxury-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(23, 25, 28, 0.96),
+        rgba(23, 25, 28, 0.72)
+      );
+  }
+
+  .chauffeur-luxury-content {
+    padding: 80px 20px;
+  }
+
+  .chauffeur-luxury-content h2 {
+    font-size: 65px;
+
+    letter-spacing: -3px;
+  }
+
+  .chauffeur-points {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .testimonial-box blockquote {
+    font-size: 32px;
+  }
+
+  .vehicles-final-cta {
+    min-height: 580px;
+  }
+
+  .vehicles-final-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(23, 25, 28, 0.97),
+        rgba(23, 25, 28, 0.74)
+      );
+  }
+
+  .vehicles-final-content {
+    padding: 80px 20px;
+  }
+
+  .vehicles-final-content h2 {
+    font-size: 65px;
+
+    letter-spacing: -3px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .vehicles-hero-container {
+    padding-left: 16px;
+
+    padding-right: 16px;
+  }
+
+  .vehicles-eyebrow,
+  .section-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .vehicles-hero h1 {
+    font-size: 65px;
+  }
+
+  .hero-mini-stats {
+    gap: 10px;
+  }
+
+  .hero-mini-stats div {
+    min-width: 70px;
+  }
+
+  .luxury-intro-copy h2,
+  .vehicle-section-head h2 {
+    font-size: 43px;
+  }
+
+  .luxury-intro-copy > p {
+    font-size: 13px;
+  }
+
+  .luxury-card-image {
+    height: 280px;
+  }
+
+  .vehicle-image-name {
+    left: 22px;
+
+    right: 22px;
+  }
+
+  .vehicle-image-name h3 {
+    font-size: 28px;
+  }
+
+  .vehicle-category,
+  .vehicle-index {
+    top: 16px;
+  }
+
+  .vehicle-category {
+    left: 16px;
+  }
+
+  .vehicle-index {
+    right: 16px;
+  }
+
+  .luxury-card-body {
+    padding: 20px;
+  }
+
+  .vehicle-specs {
+    flex-wrap: wrap;
+  }
+
+  .vehicle-price strong {
+    font-size: 27px;
+  }
+
+  .round-arrow-btn {
+    width: 48px;
+
+    height: 48px;
+  }
+
+  .chauffeur-luxury-content h2,
+  .vehicles-final-content h2 {
+    font-size: 57px;
+  }
+
+  .testimonial-box blockquote {
+    font-size: 27px;
+  }
+
+  .process-card {
+    min-height: 240px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+  }
+}

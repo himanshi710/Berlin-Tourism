@@ -1,0 +1,376 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap");
+
+/* =========================================================
+   GLOBAL VARIABLES
+========================================================= */
+
+:root {
+  /* Berlin Colors */
+  --berlin-charcoal: #17191c;
+  --concrete-mist: #e7e5e0;
+  --gallery-white: #f8f7f3;
+  --electric-violet: #7657ff;
+  --neon-rose: #ff4f8b;
+  --acid-mint: #b7f34a;
+  --berlin-rust: #a9573a;
+  --urban-grey: #72767d;
+
+  /* Global Theme */
+  --background: #f8f7f3;
+  --surface: #ffffff;
+  --surface-dark: #202328;
+
+  --heading: #17191c;
+  --text: #4f5359;
+  --muted: #72767d;
+
+  /* Borders */
+  --border: #d9d7d2;
+  --border-light: rgba(23, 25, 28, 0.1);
+  --border-dark: rgba(248, 247, 243, 0.13);
+
+  /* Gradients */
+  --gradient-neon: linear-gradient(
+    135deg,
+    #7657ff 0%,
+    #ff4f8b 100%
+  );
+
+  --gradient-mint: linear-gradient(
+    135deg,
+    #b7f34a 0%,
+    #7657ff 100%
+  );
+
+  --gradient-editorial: linear-gradient(
+    135deg,
+    #17191c 0%,
+    #7657ff 55%,
+    #ff4f8b 100%
+  );
+
+  /* Typography */
+  --font-main: "Playfair Display", serif;
+
+  /* Container */
+  --container-width: 1320px;
+  --container-padding: 24px;
+
+  /* Sections */
+  --section-padding: 110px;
+  --section-padding-small: 75px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-round: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 8px 25px rgba(23, 25, 28, 0.08);
+  --shadow-md: 0 18px 45px rgba(23, 25, 28, 0.12);
+  --shadow-lg: 0 30px 80px rgba(23, 25, 28, 0.18);
+
+  --shadow-violet: 0 12px 35px rgba(118, 87, 255, 0.25);
+  --shadow-rose: 0 12px 35px rgba(255, 79, 139, 0.22);
+  --shadow-mint: 0 12px 35px rgba(183, 243, 74, 0.18);
+
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition: 0.35s ease;
+  --transition-slow: 0.7s ease;
+  --transition-image: 0.9s ease;
+
+  --animate-distance: 35px;
+
+  /* Header */
+  --navbar-height: 82px;
+  --topbar-height: 36px;
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: var(--font-main);
+
+  background: var(--background);
+  color: var(--text);
+
+  overflow-x: hidden;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-main);
+}
+
+button,
+input,
+textarea,
+select {
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+
+/* =========================================================
+   GLOBAL CONTAINER
+========================================================= */
+
+.container {
+  width: min(
+    100% - (var(--container-padding) * 2),
+    var(--container-width)
+  );
+
+  margin-inline: auto;
+}
+
+
+/* =========================================================
+   GLOBAL ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(var(--animate-distance));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--animate-distance) * -1));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(var(--animate-distance));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--animate-distance) * -1));
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes imageZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(118, 87, 255, 0);
+  }
+
+  50% {
+    box-shadow: var(--shadow-violet);
+  }
+}
+
+
+/* =========================================================
+   GLOBAL ANIMATION CLASSES
+========================================================= */
+
+.animate-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+.animate-down {
+  animation: fadeDown 0.8s ease both;
+}
+
+.animate-left {
+  animation: fadeLeft 0.8s ease both;
+}
+
+.animate-right {
+  animation: fadeRight 0.8s ease both;
+}
+
+.animate-scale {
+  animation: scaleIn 0.8s ease both;
+}
+
+.animate-image {
+  animation: imageZoom 8s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   GLOBAL HOVER TRANSITIONS
+========================================================= */
+
+a,
+button,
+img,
+.card,
+[class*="card"],
+[class*="btn"] {
+  transition:
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
+}
+
+
+/* =========================================================
+   RESPONSIVE VARIABLES
+========================================================= */
+
+@media (max-width: 1199px) {
+  :root {
+    --container-width: 1140px;
+    --container-padding: 22px;
+
+    --section-padding: 90px;
+    --section-padding-small: 65px;
+
+    --navbar-height: 76px;
+  }
+}
+
+
+@media (max-width: 991px) {
+  :root {
+    --container-width: 960px;
+    --container-padding: 20px;
+
+    --section-padding: 80px;
+    --section-padding-small: 60px;
+
+    --navbar-height: 72px;
+
+    --animate-distance: 25px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  :root {
+    --container-width: 100%;
+    --container-padding: 18px;
+
+    --section-padding: 65px;
+    --section-padding-small: 50px;
+
+    --navbar-height: 68px;
+
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+
+    --animate-distance: 18px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 15px;
+
+    --section-padding: 55px;
+    --section-padding-small: 42px;
+
+    --navbar-height: 64px;
+
+    --animate-distance: 14px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,209 @@
+/* =========================================================
+   NOIR NEON BERLIN
+   SECTION TITLE
+========================================================= */
+
+.berlin-section-title {
+  width: 100%;
+  max-width: 760px;
+
+  margin-bottom: 55px;
+}
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+
+  color: #7657ff;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.eyebrow-line {
+  width: 27px;
+  height: 1px;
+
+  background: #ff4f8b;
+}
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.section-heading {
+  margin: 0;
+
+  color: #17191c;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(38px, 5vw, 62px);
+  font-weight: 500;
+
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+
+.section-heading span {
+  color: #7657ff;
+  font-style: italic;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.section-description {
+  max-width: 620px;
+
+  margin: 22px 0 0;
+
+  color: #72767d;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.85;
+}
+
+/* =========================================================
+   ALIGNMENT
+========================================================= */
+
+.berlin-section-title.center {
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+}
+
+.berlin-section-title.center .section-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.berlin-section-title.center .section-eyebrow {
+  justify-content: center;
+}
+
+.berlin-section-title.right {
+  margin-left: auto;
+
+  text-align: right;
+}
+
+.berlin-section-title.right .section-description {
+  margin-left: auto;
+}
+
+.berlin-section-title.right .section-eyebrow {
+  justify-content: flex-end;
+}
+
+/* =========================================================
+   DARK SECTION SUPPORT
+========================================================= */
+
+.dark-section .section-heading {
+  color: #f8f7f3;
+}
+
+.dark-section .section-description {
+  color: #85888e;
+}
+
+.dark-section .section-eyebrow {
+  color: #b7f34a;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .berlin-section-title {
+    margin-bottom: 40px;
+  }
+
+  .section-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+  }
+
+  .section-heading {
+    font-size: clamp(34px, 8vw, 48px);
+
+    letter-spacing: -1px;
+  }
+
+  .section-description {
+    margin-top: 18px;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .berlin-section-title {
+    margin-bottom: 32px;
+  }
+
+  .section-heading {
+    font-size: 36px;
+
+    line-height: 1.08;
+  }
+
+  .section-description {
+    font-size: 12.5px;
+
+    line-height: 1.75;
+  }
+
+  .section-eyebrow {
+    margin-bottom: 12px;
+
+    font-size: 7px;
+
+    letter-spacing: 2px;
+  }
+
+  .eyebrow-line {
+    width: 20px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .section-heading {
+    font-size: 32px;
+  }
+
+  .section-description {
+    font-size: 12px;
+  }
+}

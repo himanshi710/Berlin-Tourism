@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&display=swap");
+
+:root {
+  /* Berlin Colors */
+  --berlin-charcoal: #17191c;
+  --concrete-mist: #e7e5e0;
+  --gallery-white: #f8f7f3;
+  --electric-violet: #7657ff;
+  --neon-rose: #ff4f8b;
+  --acid-mint: #b7f34a;
+  --berlin-rust: #a9573a;
+  --urban-grey: #72767d;
+
+  /* Theme */
+  --background: #f8f7f3;
+  --surface: #ffffff;
+  --surface-dark: #202328;
+
+  --heading: #17191c;
+  --text: #4f5359;
+  --muted: #72767d;
+
+  /* Borders */
+  --border: #d9d7d2;
+  --border-light: rgba(23, 25, 28, 0.1);
+  --border-dark: rgba(248, 247, 243, 0.13);
+
+  /* Gradients */
+  --gradient-neon: linear-gradient(
+    135deg,
+    #7657ff,
+    #ff4f8b
+  );
+
+  --gradient-mint: linear-gradient(
+    135deg,
+    #b7f34a,
+    #7657ff
+  );
+
+  /* Font */
+  --font-main: "Playfair Display", serif;
+
+  /* Layout */
+  --container-width: 1320px;
+  --container-padding: 24px;
+
+  /* Sections */
+  --section-padding: 110px;
+  --section-padding-small: 75px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-round: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 8px 25px rgba(23, 25, 28, 0.08);
+  --shadow-md: 0 18px 45px rgba(23, 25, 28, 0.12);
+  --shadow-lg: 0 30px 80px rgba(23, 25, 28, 0.18);
+
+  /* Animation */
+  --transition-fast: 0.2s ease;
+  --transition: 0.35s ease;
+  --transition-slow: 0.7s ease;
+  --transition-image: 0.9s ease;
+
+  --animate-distance: 35px;
+
+  /* Header */
+  --navbar-height: 82px;
+  --topbar-height: 36px;
+}

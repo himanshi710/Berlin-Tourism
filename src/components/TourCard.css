@@ -1,0 +1,432 @@
+/* =========================================================
+   NOIR NEON BERLIN
+   TOUR CARD
+========================================================= */
+
+.berlin-tour-card {
+  position: relative;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.berlin-tour-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 25px 55px rgba(23, 25, 28, 0.14);
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.tour-card-image {
+  position: relative;
+
+  width: 100%;
+  height: 300px;
+
+  overflow: hidden;
+
+  background: #17191c;
+}
+
+.tour-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.7s ease,
+    filter 0.7s ease;
+}
+
+.berlin-tour-card:hover
+.tour-card-image img {
+  transform: scale(1.08);
+
+  filter: saturate(1.1);
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.tour-card-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(23, 25, 28, 0.12) 20%,
+      rgba(23, 25, 28, 0.68) 100%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.tour-card-category {
+  position: absolute;
+
+  top: 17px;
+  left: 17px;
+
+  padding: 7px 11px;
+
+  background: #7657ff;
+
+  color: #ffffff;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   FEATURED LABEL
+========================================================= */
+
+.tour-card-featured-label {
+  position: absolute;
+
+  top: 17px;
+  right: 17px;
+
+  padding: 7px 11px;
+
+  background: #b7f34a;
+
+  color: #17191c;
+
+  font-size: 7px;
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.tour-card-content {
+  padding: 23px 22px 21px;
+}
+
+/* =========================================================
+   META
+========================================================= */
+
+.tour-card-meta {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 13px;
+}
+
+.tour-card-meta span {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #72767d;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.tour-card-meta svg {
+  color: #7657ff;
+
+  font-size: 9px;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.tour-card-content h3 {
+  margin: 0;
+
+  color: #17191c;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 27px;
+  font-weight: 500;
+
+  line-height: 1.12;
+
+  transition: color 0.3s ease;
+}
+
+.berlin-tour-card:hover
+.tour-card-content h3 {
+  color: #7657ff;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.tour-card-content p {
+  margin: 14px 0 20px;
+
+  color: #72767d;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.tour-card-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.tour-card-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.tour-card-price small {
+  margin-bottom: 3px;
+
+  color: #72767d;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.tour-card-price strong {
+  color: #17191c;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   LINK
+========================================================= */
+
+.tour-card-link {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #17191c;
+
+  text-decoration: none;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+
+  transition: color 0.3s ease;
+}
+
+.tour-card-link:hover {
+  color: #7657ff;
+}
+
+.tour-card-arrow {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e5e7eb;
+
+  font-size: 8px;
+
+  transition: all 0.3s ease;
+}
+
+.tour-card-link:hover .tour-card-arrow {
+  color: #ffffff;
+
+  background: #7657ff;
+  border-color: #7657ff;
+
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   FEATURED TOUR
+========================================================= */
+
+.tour-card-featured {
+  border-color: rgba(118, 87, 255, 0.35);
+}
+
+.tour-card-featured .tour-card-content {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #faf9ff 100%
+    );
+}
+
+/* =========================================================
+   DARK SECTION
+========================================================= */
+
+.dark-section .berlin-tour-card {
+  background: #202328;
+
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.dark-section .tour-card-content h3 {
+  color: #f8f7f3;
+}
+
+.dark-section .tour-card-content p {
+  color: #85888e;
+}
+
+.dark-section .tour-card-meta span {
+  color: #85888e;
+}
+
+.dark-section .tour-card-bottom {
+  border-color: rgba(255, 255, 255, 0.09);
+}
+
+.dark-section .tour-card-price strong,
+.dark-section .tour-card-link {
+  color: #f8f7f3;
+}
+
+.dark-section .tour-card-arrow {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .tour-card-image {
+    height: 280px;
+  }
+
+  .tour-card-content {
+    padding: 21px 19px;
+  }
+
+  .tour-card-content h3 {
+    font-size: 25px;
+  }
+
+  .tour-card-content p {
+    font-size: 11.5px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .tour-card-image {
+    height: 260px;
+  }
+
+  .tour-card-content {
+    padding: 19px 17px;
+  }
+
+  .tour-card-meta {
+    gap: 13px;
+  }
+
+  .tour-card-content h3 {
+    font-size: 24px;
+  }
+
+  .tour-card-bottom {
+    align-items: center;
+  }
+
+  .tour-card-price strong {
+    font-size: 16px;
+  }
+
+  .tour-card-link {
+    font-size: 7px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .tour-card-image {
+    height: 240px;
+  }
+
+  .tour-card-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tour-card-link {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+}

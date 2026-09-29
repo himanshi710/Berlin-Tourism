@@ -1,0 +1,369 @@
+/* =========================================================
+   NOIR NEON BERLIN
+   EXPERIENCE CARD
+========================================================= */
+
+.berlin-experience-card {
+  position: relative;
+  width: 100%;
+  background: #f8f7f3;
+  border: 1px solid #e7e5e0;
+  overflow: hidden;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.berlin-experience-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(118, 87, 255, 0.35);
+  box-shadow: 0 22px 55px rgba(23, 25, 28, 0.14);
+}
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.experience-card-image {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  overflow: hidden;
+  background: #17191c;
+}
+
+.experience-card-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.6s ease;
+}
+
+.berlin-experience-card:hover
+.experience-card-image img {
+  transform: scale(1.08);
+  filter: saturate(1.08);
+}
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.experience-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(23, 25, 28, 0.05) 0%,
+      rgba(23, 25, 28, 0.12) 42%,
+      rgba(23, 25, 28, 0.82) 100%
+    );
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.experience-card-number {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 3;
+
+  min-width: 44px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 10px;
+
+  color: #f8f7f3;
+  background: rgba(23, 25, 28, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.berlin-experience-card:hover
+.experience-card-number {
+  color: #17191c;
+  background: #b7f34a;
+  border-color: #b7f34a;
+}
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.experience-card-category {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  z-index: 3;
+
+  padding: 8px 13px;
+
+  color: #17191c;
+  background: #b7f34a;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.berlin-experience-card:hover
+.experience-card-category {
+  color: #ffffff;
+  background: #7657ff;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.experience-card-content {
+  position: relative;
+  padding: 28px 28px 30px;
+}
+
+.experience-card-label {
+  display: block;
+  margin-bottom: 10px;
+
+  color: #7657ff;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.experience-card-content h3 {
+  margin: 0;
+
+  color: #17191c;
+
+  font-size: 27px;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+
+  transition: color 0.3s ease;
+}
+
+.berlin-experience-card:hover
+.experience-card-content h3 {
+  color: #7657ff;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.experience-card-content p {
+  margin: 14px 0 22px;
+
+  color: #72767d;
+
+  font-size: 14px;
+  line-height: 1.75;
+  font-weight: 400;
+}
+
+/* =========================================================
+   LINK
+========================================================= */
+
+.experience-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+
+  color: #17191c;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+
+  transition: color 0.3s ease;
+}
+
+.experience-card-link:hover {
+  color: #7657ff;
+}
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.experience-card-arrow {
+  width: 34px;
+  height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #17191c;
+
+  font-size: 10px;
+
+  transition:
+    background 0.35s ease,
+    transform 0.35s ease,
+    color 0.35s ease;
+}
+
+.experience-card-link:hover
+.experience-card-arrow {
+  color: #17191c;
+  background: #b7f34a;
+  transform: translateX(5px);
+}
+
+/* =========================================================
+   TOP ACCENT
+========================================================= */
+
+.berlin-experience-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 3px;
+
+  z-index: 5;
+
+  background: linear-gradient(
+    90deg,
+    #7657ff,
+    #ff4f8b,
+    #b7f34a
+  );
+
+  transition: width 0.5s ease;
+}
+
+.berlin-experience-card:hover::before {
+  width: 100%;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+  .experience-card-image {
+    height: 320px;
+  }
+
+  .experience-card-content {
+    padding: 25px;
+  }
+
+  .experience-card-content h3 {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+  .experience-card-image {
+    height: 290px;
+  }
+
+  .experience-card-number {
+    top: 16px;
+    left: 16px;
+
+    min-width: 40px;
+    height: 40px;
+
+    font-size: 10px;
+  }
+
+  .experience-card-category {
+    top: 16px;
+    right: 16px;
+
+    padding: 7px 10px;
+
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .experience-card-content {
+    padding: 22px 20px 25px;
+  }
+
+  .experience-card-content h3 {
+    font-size: 23px;
+  }
+
+  .experience-card-content p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .experience-card-image {
+    height: 250px;
+  }
+
+  .experience-card-content h3 {
+    font-size: 21px;
+  }
+
+  .experience-card-label {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .experience-card-content p {
+    margin-top: 12px;
+    margin-bottom: 18px;
+  }
+}

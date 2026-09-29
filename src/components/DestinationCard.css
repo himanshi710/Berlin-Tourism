@@ -1,0 +1,671 @@
+/* =========================================================
+   BERLIN DESTINATION CARD
+   LUXURY EDITORIAL / NEON
+========================================================= */
+
+.berlin-destination-card {
+  --card-bg: #202328;
+  --card-border: rgba(248, 247, 243, 0.12);
+  --violet: #7657ff;
+  --rose: #ff4f8b;
+  --mint: #b7f34a;
+  --white: #f8f7f3;
+  --text: #bfc1c5;
+
+  position: relative;
+  width: 100%;
+  min-width: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.015)
+    ),
+    var(--card-bg);
+
+  border: 1px solid var(--card-border);
+  border-radius: 30px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  transition:
+    transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.4s ease,
+    box-shadow 0.55s ease;
+
+  isolation: isolate;
+}
+
+.berlin-destination-card:hover {
+  transform: translateY(-10px);
+
+  border-color: rgba(118, 87, 255, 0.45);
+
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.42),
+    0 0 45px rgba(118, 87, 255, 0.08);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.destination-card-image {
+  position: relative;
+
+  width: 100%;
+  height: 360px;
+
+  overflow: hidden;
+
+  background: #17191c;
+}
+
+.destination-card-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transform: scale(1.01);
+
+  transition:
+    transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.6s ease;
+}
+
+.berlin-destination-card:hover
+.destination-card-image img {
+  transform: scale(1.1);
+
+  filter:
+    saturate(1.12)
+    contrast(1.04);
+}
+
+
+/* =========================================================
+   IMAGE DARK GRADIENT
+========================================================= */
+
+.destination-image-shade {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 11, 13, 0.42) 0%,
+      rgba(10, 11, 13, 0.04) 40%,
+      rgba(10, 11, 13, 0.18) 55%,
+      rgba(10, 11, 13, 0.9) 100%
+    );
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NEON IMAGE GLOW
+========================================================= */
+
+.destination-image-glow {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  right: -90px;
+  bottom: -90px;
+
+  border-radius: 50%;
+
+  background: var(--violet);
+
+  filter: blur(70px);
+
+  opacity: 0;
+
+  z-index: 1;
+
+  transition: opacity 0.5s ease;
+}
+
+.berlin-destination-card:hover
+.destination-image-glow {
+  opacity: 0.28;
+}
+
+
+/* =========================================================
+   TOP META
+========================================================= */
+
+.destination-card-top {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 3;
+}
+
+
+/* CATEGORY */
+
+.destination-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 13px;
+
+  color: var(--white);
+
+  background: rgba(20, 21, 24, 0.66);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  border-radius: 999px;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  font-family: var(--font-mono, "IBM Plex Mono", monospace);
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.category-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: var(--mint);
+
+  box-shadow:
+    0 0 10px rgba(183, 243, 74, 0.8);
+}
+
+
+/* BERLIN LABEL */
+
+.destination-berlin {
+  color: rgba(248, 247, 243, 0.78);
+
+  font-family: var(--font-mono, monospace);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  writing-mode: vertical-rl;
+
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   IMAGE LOCATION
+========================================================= */
+
+.destination-image-location {
+  position: absolute;
+
+  left: 22px;
+  bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  z-index: 3;
+
+  color: rgba(248, 247, 243, 0.82);
+
+  font-family: var(--font-mono, monospace);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+.destination-image-location svg {
+  color: var(--mint);
+
+  font-size: 12px;
+
+  filter:
+    drop-shadow(0 0 7px rgba(183, 243, 74, 0.5));
+}
+
+
+/* =========================================================
+   BIG NUMBER
+========================================================= */
+
+.destination-big-number {
+  position: absolute;
+
+  right: 18px;
+  bottom: 3px;
+
+  z-index: 2;
+
+  color: rgba(248, 247, 243, 0.09);
+
+  font-family: var(--font-display, Georgia, serif);
+
+  font-size: 100px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  transition:
+    color 0.4s ease,
+    transform 0.5s ease;
+}
+
+.berlin-destination-card:hover
+.destination-big-number {
+  color: rgba(118, 87, 255, 0.18);
+
+  transform: translateY(-5px);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.destination-card-content {
+  position: relative;
+
+  padding: 27px 27px 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0)
+    );
+}
+
+
+/* TITLE */
+
+.destination-title-wrap {
+  margin-bottom: 13px;
+}
+
+.destination-kicker {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: var(--rose);
+
+  font-family: var(--font-mono, monospace);
+
+  font-size: 9px;
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+.destination-title-wrap h3 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-family: var(
+    --font-display,
+    "Cormorant Garamond",
+    Georgia,
+    serif
+  );
+
+  font-size: clamp(30px, 3vw, 40px);
+
+  font-weight: 500;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.02em;
+
+  transition: color 0.3s ease;
+}
+
+.berlin-destination-card:hover
+.destination-title-wrap h3 {
+  color: #ffffff;
+}
+
+
+/* DESCRIPTION */
+
+.destination-description {
+  margin: 0;
+
+  max-width: 92%;
+
+  color: var(--text);
+
+  font-family: var(
+    --font-body,
+    "DM Sans",
+    Arial,
+    sans-serif
+  );
+
+  font-size: 13px;
+
+  line-height: 1.75;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.destination-explore {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin-top: 23px;
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(248, 247, 243, 0.1);
+
+  color: var(--white);
+
+  text-decoration: none;
+
+  font-family: var(
+    --font-body,
+    "DM Sans",
+    Arial,
+    sans-serif
+  );
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.05em;
+
+  transition: color 0.3s ease;
+}
+
+.destination-explore-text {
+  position: relative;
+}
+
+.destination-explore-text::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--mint);
+
+  transition: width 0.35s ease;
+}
+
+.berlin-destination-card:hover
+.destination-explore-text::after {
+  width: 100%;
+}
+
+
+/* ARROW */
+
+.destination-arrow {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--violet),
+      var(--rose)
+    );
+
+  box-shadow:
+    0 8px 22px rgba(118, 87, 255, 0.22);
+
+  transition:
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.4s ease;
+}
+
+.destination-arrow svg {
+  font-size: 11px;
+
+  transition: transform 0.35s ease;
+}
+
+.berlin-destination-card:hover
+.destination-arrow {
+  transform: rotate(-8deg) scale(1.08);
+
+  box-shadow:
+    0 10px 30px rgba(255, 79, 139, 0.3);
+}
+
+.berlin-destination-card:hover
+.destination-arrow svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   BOTTOM ACCENT
+========================================================= */
+
+.destination-card-line {
+  position: absolute;
+
+  left: 27px;
+  right: 27px;
+  bottom: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--violet),
+      var(--rose),
+      var(--mint)
+    );
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: transform 0.55s ease;
+
+  z-index: 5;
+}
+
+.berlin-destination-card:hover
+.destination-card-line {
+  transform: scaleX(1);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .destination-card-image {
+    height: 320px;
+  }
+
+  .destination-card-content {
+    padding: 24px;
+  }
+
+  .destination-title-wrap h3 {
+    font-size: 34px;
+  }
+
+  .destination-big-number {
+    font-size: 85px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .berlin-destination-card {
+    border-radius: 24px;
+  }
+
+  .destination-card-image {
+    height: 300px;
+  }
+
+  .destination-card-top {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .destination-category {
+    padding: 8px 11px;
+
+    font-size: 9px;
+  }
+
+  .destination-image-location {
+    left: 18px;
+    bottom: 18px;
+
+    font-size: 9px;
+  }
+
+  .destination-big-number {
+    right: 12px;
+    font-size: 75px;
+  }
+
+  .destination-card-content {
+    padding: 22px 20px 21px;
+  }
+
+  .destination-title-wrap h3 {
+    font-size: 32px;
+  }
+
+  .destination-description {
+    max-width: 100%;
+
+    font-size: 12.5px;
+    line-height: 1.7;
+  }
+
+  .destination-explore {
+    margin-top: 20px;
+  }
+
+  .destination-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .destination-card-line {
+    left: 20px;
+    right: 20px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .destination-card-image {
+    height: 270px;
+  }
+
+  .destination-card-content {
+    padding: 20px 18px;
+  }
+
+  .destination-title-wrap h3 {
+    font-size: 29px;
+  }
+
+  .destination-description {
+    font-size: 12px;
+  }
+
+  .destination-berlin {
+    font-size: 8px;
+  }
+
+  .destination-big-number {
+    font-size: 65px;
+  }
+
+  .destination-card-line {
+    left: 18px;
+    right: 18px;
+  }
+}

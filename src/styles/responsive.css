@@ -1,0 +1,615 @@
+/* =========================================================
+   NOIR NEON BERLIN
+   GLOBAL RESPONSIVE SYSTEM
+========================================================= */
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1400px+
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .container {
+    max-width: 1320px;
+  }
+
+  .section-padding {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   1200px — 1399px
+========================================================= */
+
+@media (max-width: 1399px) {
+
+  .container {
+    max-width: 1140px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL DESKTOP / LARGE TABLET
+   992px — 1199px
+========================================================= */
+
+@media (max-width: 1199px) {
+
+  .container {
+    max-width: 960px;
+  }
+
+
+  /* -----------------------------------------
+     TYPOGRAPHY
+  ----------------------------------------- */
+
+  h1 {
+    font-size: clamp(55px, 7vw, 95px);
+  }
+
+  h2 {
+    font-size: clamp(42px, 5vw, 72px);
+  }
+
+
+  /* -----------------------------------------
+     COMMON GRIDS
+  ----------------------------------------- */
+
+  .grid-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* -----------------------------------------
+     COMMON GAPS
+  ----------------------------------------- */
+
+  .gap-xl {
+    gap: 60px;
+  }
+
+  .gap-lg {
+    gap: 40px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   768px — 991px
+========================================================= */
+
+@media (max-width: 991px) {
+
+  .container {
+    max-width: 720px;
+  }
+
+
+  /* -----------------------------------------
+     BODY
+  ----------------------------------------- */
+
+  body {
+    overflow-x: hidden;
+  }
+
+
+  /* -----------------------------------------
+     SECTIONS
+  ----------------------------------------- */
+
+  .section-padding {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+
+  /* -----------------------------------------
+     TYPOGRAPHY
+  ----------------------------------------- */
+
+  h1 {
+    font-size: clamp(50px, 8vw, 80px);
+  }
+
+  h2 {
+    font-size: clamp(40px, 6vw, 62px);
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+
+  /* -----------------------------------------
+     GRID
+  ----------------------------------------- */
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* -----------------------------------------
+     FLEX
+  ----------------------------------------- */
+
+  .tablet-column {
+    flex-direction: column;
+  }
+
+  .tablet-center {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+  /* -----------------------------------------
+     COMMON IMAGE
+  ----------------------------------------- */
+
+  .desktop-image {
+    height: 500px;
+  }
+
+
+  /* -----------------------------------------
+     BUTTONS
+  ----------------------------------------- */
+
+  .btn-noir,
+  .btn-neon,
+  .btn-mint,
+  .btn-outline-noir {
+    min-height: 50px;
+  }
+
+
+  /* -----------------------------------------
+     HIDE DESKTOP ELEMENTS
+  ----------------------------------------- */
+
+  .desktop-only {
+    display: none !important;
+  }
+
+
+  /* -----------------------------------------
+     SHOW TABLET ELEMENTS
+  ----------------------------------------- */
+
+  .tablet-only {
+    display: block !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   576px — 767px
+========================================================= */
+
+@media (max-width: 767px) {
+
+  .container {
+    max-width: 100%;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  /* -----------------------------------------
+     SECTION
+  ----------------------------------------- */
+
+  .section-padding {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+
+  /* -----------------------------------------
+     TYPOGRAPHY
+  ----------------------------------------- */
+
+  h1 {
+    font-size: clamp(44px, 12vw, 68px);
+    letter-spacing: -3px;
+  }
+
+  h2 {
+    font-size: clamp(38px, 10vw, 55px);
+    letter-spacing: -2.5px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+
+  /* -----------------------------------------
+     GRIDS
+  ----------------------------------------- */
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* -----------------------------------------
+     COMMON FLEX
+  ----------------------------------------- */
+
+  .mobile-column {
+    flex-direction: column !important;
+  }
+
+  .mobile-center {
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .mobile-start {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+
+  /* -----------------------------------------
+     WIDTH
+  ----------------------------------------- */
+
+  .mobile-full {
+    width: 100% !important;
+  }
+
+
+  /* -----------------------------------------
+     SPACING
+  ----------------------------------------- */
+
+  .mobile-gap-sm {
+    gap: 12px !important;
+  }
+
+  .mobile-gap-md {
+    gap: 20px !important;
+  }
+
+  .mobile-gap-lg {
+    gap: 30px !important;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+
+  .desktop-image,
+  .tablet-image {
+    height: 400px;
+  }
+
+
+  /* -----------------------------------------
+     BUTTONS
+  ----------------------------------------- */
+
+  .btn-noir,
+  .btn-neon,
+  .btn-mint,
+  .btn-outline-noir {
+    width: 100%;
+    min-height: 50px;
+  }
+
+
+  /* -----------------------------------------
+     DESKTOP HIDE
+  ----------------------------------------- */
+
+  .desktop-only,
+  .tablet-only {
+    display: none !important;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE SHOW
+  ----------------------------------------- */
+
+  .mobile-only {
+    display: block !important;
+  }
+
+
+  /* -----------------------------------------
+     TABLE
+  ----------------------------------------- */
+
+  .responsive-table {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   481px — 575px
+========================================================= */
+
+@media (max-width: 575px) {
+
+  .container {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+
+
+  /* -----------------------------------------
+     TYPOGRAPHY
+  ----------------------------------------- */
+
+  h1 {
+    font-size: 48px;
+    letter-spacing: -2.5px;
+  }
+
+  h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  h3 {
+    font-size: 21px;
+  }
+
+
+  /* -----------------------------------------
+     SECTION
+  ----------------------------------------- */
+
+  .section-padding {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+
+  .desktop-image,
+  .tablet-image,
+  .mobile-image {
+    height: 320px;
+  }
+
+
+  /* -----------------------------------------
+     BUTTON
+  ----------------------------------------- */
+
+  .btn-noir,
+  .btn-neon,
+  .btn-mint,
+  .btn-outline-noir {
+    min-height: 48px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+
+  /* -----------------------------------------
+     CARD
+  ----------------------------------------- */
+
+  .card-responsive {
+    padding: 22px !important;
+  }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+   480px and below
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+
+  /* -----------------------------------------
+     BODY
+  ----------------------------------------- */
+
+  body {
+    font-size: 13px;
+  }
+
+
+  /* -----------------------------------------
+     TYPOGRAPHY
+  ----------------------------------------- */
+
+  h1 {
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  h2 {
+    font-size: 38px;
+    letter-spacing: -1.8px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+
+
+  /* -----------------------------------------
+     SECTION
+  ----------------------------------------- */
+
+  .section-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE
+  ----------------------------------------- */
+
+  .desktop-image,
+  .tablet-image,
+  .mobile-image {
+    height: 280px;
+  }
+
+
+  /* -----------------------------------------
+     BUTTON
+  ----------------------------------------- */
+
+  .btn-noir,
+  .btn-neon,
+  .btn-mint,
+  .btn-outline-noir {
+    min-height: 46px;
+    font-size: 7px;
+  }
+
+
+  /* -----------------------------------------
+     EYEBROW
+  ----------------------------------------- */
+
+  .eyebrow {
+    gap: 9px;
+    font-size: 7px;
+    letter-spacing: 1.8px;
+  }
+
+  .eyebrow::before {
+    width: 24px;
+  }
+
+
+  /* -----------------------------------------
+     LABEL
+  ----------------------------------------- */
+
+  .editorial-label {
+    font-size: 7px;
+    letter-spacing: 1.4px;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE HIDE
+  ----------------------------------------- */
+
+  .mobile-hide {
+    display: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 767px) and (orientation: landscape) {
+
+  .hero-section,
+  .page-hero {
+    min-height: 520px;
+  }
+
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+  .image-hover:hover img {
+    transform: none;
+  }
+
+  .btn-noir:hover,
+  .btn-neon:hover,
+  .btn-mint:hover,
+  .btn-outline-noir:hover {
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+}

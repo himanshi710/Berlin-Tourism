@@ -1,0 +1,13 @@
+/* =========================================================
+   NOIR NEON BERLIN
+   SCROLL TO TOP
+========================================================= */
+
+/*
+  ScrollToTop.jsx does not render a visible element.
+  This file is kept for project structure consistency.
+*/
+
+.scroll-to-top {
+  display: none;
+}
