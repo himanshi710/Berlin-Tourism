@@ -2,24 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/Berlin-Tourism/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Berlin Tourism</title>
-    <!-- GitHub Pages SPA redirect handler -->
+    <!-- Single Page Apps for GitHub Pages redirect handler -->
     <script>
       (function (l) {
-        if (l.search[1] === '/') {
+        if (l.search[1] === 'p') {
           var decoded = l.search
             .slice(1)
             .split('&')
-            .map(function (s) {
-              return s.replace(/~and~/g, '&');
-            })
-            .join('?');
+            .reduce(function (memo, item) {
+              var parts = item.split('=');
+              memo[parts[0]] = parts
+                .slice(1)
+                .join('=')
+                .replace(/~and~/g, '&');
+              return memo;
+            }, {});
           window.history.replaceState(
             null,
             null,
-            l.pathname.slice(0, -1) + decoded + l.hash
+            l.pathname.slice(0, -1) +
+              (decoded.p || '') +
+              (decoded.q ? '?' + decoded.q : '') +
+              l.hash
           );
         }
       })(window.location);

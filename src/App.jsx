@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 
 // Global Components
 import TopBar from "./components/TopBar";
@@ -122,12 +122,12 @@ function App() {
                     The page you're looking for doesn't exist.
                   </p>
 
-                  <a
-                    href="/"
+                  <Link
+                    to="/"
                     className="btn-noir"
                   >
                     Back Home
-                  </a>
+                  </Link>
                 </div>
               </div>
             }
